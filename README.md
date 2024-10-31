@@ -7,6 +7,95 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# SHACK15
+
+## Prerequisites
+
+Ensure that the following are installed on your local machine:
+
+- [PHP](https://www.php.net/downloads) (version 7.4 or higher)
+- [Composer](https://getcomposer.org/download/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Laravel](https://laravel.com/docs/installation) CLI (optional)
+
+## Installation
+
+Follow these steps to set up the project locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/bsaii/shack15-laravel
+cd shack15-laravel
+```
+
+### 2. Install Dependencies
+
+After navigating into the project directory, install PHP dependencies with Composer:
+
+```bash
+composer install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file by copying `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Then, update the `.env` file with your PostgreSQL database credentials:
+
+```plaintext
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+Generate the application key:
+
+```bash
+php artisan key:generate
+```
+
+### 4. Set Up the Database
+
+Run the following command to seed the database:
+
+```bash
+php artisan db:seed
+```
+
+> **Note**: Ensure your PostgreSQL service is running and the database specified in the `.env` file exists.
+
+### 5. Serve the Application
+
+Finally, start the Laravel development server:
+
+```bash
+php artisan serve
+```
+
+The application should now be running at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+## Additional Commands
+
+- **Database Migration**: To run database migrations, use `php artisan migrate`.
+- **Clear Cache**: To clear the cache, run `php artisan cache:clear`.
+
+## Troubleshooting
+
+- **Database Connection**: Ensure PostgreSQL is running and accessible.
+- **Dependencies**: Verify that Composer and PHP are correctly installed.
+
+---
+
+This README covers the essential steps to get the project up and running!
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
