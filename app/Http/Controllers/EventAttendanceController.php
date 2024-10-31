@@ -10,7 +10,7 @@ class EventAttendanceController extends Controller
 {
     public function index(): JsonResponse
     {
-        $attendances = DB::table('event_attendances')->get();
+        $attendances = DB::table('event_attendances')->limit(5)->get();
 
         return response()->json($attendances);
     }

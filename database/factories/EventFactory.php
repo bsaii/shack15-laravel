@@ -20,7 +20,7 @@ class EventFactory extends Factory
             'id' => fake()->uuid(),
             'name' => fake()->name(),
             'event_date' => fake()->dateTimeBetween('-1 years', 'now'),
-            'attendance_count' => fake()->numberBetween(250, 5000)
+            'attendance_count' => fake()->numberBetween(5, 10)
         ];
     }
 }

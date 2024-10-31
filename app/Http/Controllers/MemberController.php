@@ -9,7 +9,7 @@ class MemberController extends Controller
 {
     public function index(): JsonResponse
     {
-        $members = DB::table('members')->get();
+        $members = DB::table('members')->orderBy('created_at', 'desc')->limit(10)->get();
         return response()->json($members);
     }
 }

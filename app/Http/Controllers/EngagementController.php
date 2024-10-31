@@ -10,7 +10,7 @@ class EngagementController extends Controller
 {
     public function index(): JsonResponse
     {
-        $engagements = DB::table('engagements')->get();
+        $engagements = DB::table('engagements')->orderBy('created_at', 'desc')->limit(5)->get();
 
         return response()->json($engagements);
     }
